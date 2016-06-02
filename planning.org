@@ -14,15 +14,8 @@
     specifically, generate a message to be included with the tweet
 
 ** toaster
-<<<<<<< HEAD
-*** DONE sensor on lever
-    hall sensor? button? something tied to the on switch?
-*** DONE tweak sensor timing
-    want to make sure the shit actually takes a pic at the right time
-=======
 *** DONE sensor for when toast is done
     hall sensor? button? something tied to the on switch?
->>>>>>> 37df8814234ce6562b2063ed3729b7a354f7b524
 *** TODO shoot toast way up
 *** TODO make toaster play after dark midi anthem
 
