@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 from __future__ import print_function
 from twython import Twython
 from PIL import Image
@@ -10,8 +12,8 @@ class ToasterCam:
     _cam = None
     
     def __init__(self):
-        self._twitter = Twython(self.APP_KEY, self.APP_SECRET,
-                                self.OAUTH_TOKEN, self.OAUTH_TOKEN_SECRET)
+        self._twitter = Twython(APP_KEY, APP_SECRET,
+                                OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
         self._cam = cv2.VideoCapture(0)
 
     def tweet_photo(self, message):
