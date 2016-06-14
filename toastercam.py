@@ -6,14 +6,17 @@ from PIL import Image
 import RPi.GPIO as GPIO
 import cv2
 import time
+import os
 
 class ToasterCam:
     _twitter = None
     _cam = None
     
     def __init__(self):
-        self._twitter = Twython(APP_KEY, APP_SECRET,
-                                OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
+        self._twitter = Twython(os.environ.get['APP_KEY'],
+                                os.environ.get['APP_SECRET'],
+                                os.environ.get['OAUTH_TOKEN'],
+                                os.environ.get['OAUTH_TOKEN_SECRET'])
         self._cam = cv2.VideoCapture(0)
 
     def tweet_photo(self, message):
