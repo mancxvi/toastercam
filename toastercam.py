@@ -9,25 +9,25 @@ import time
 import os
 
 class ToasterCam:
-    _twitter = None
-    _cam = None
+    __twitter = None
+    __cam = None
     
     def __init__(self):
-        self._twitter = Twython(os.environ.get['APP_KEY'],
+        self.__twitter = Twython(os.environ.get['APP_KEY'],
                                 os.environ.get['APP_SECRET'],
                                 os.environ.get['OAUTH_TOKEN'],
                                 os.environ.get['OAUTH_TOKEN_SECRET'])
-        self._cam = cv2.VideoCapture(0)
+        self.__cam = cv2.VideoCapture(0)
 
     def tweet_photo(self, message):
-        s, im = self._cam.read()
+        s, im = self.__cam.read()
         cv2.imwrite('photo_temp.bmp', im)
         im = Image.open('photo_temp.bmp').save('photo.jpg')
         photo = open('photo.jpg', 'rb')
 
-        response = self._twitter.upload_media(media=photo)
+        response = self.__twitter.upload_media(media=photo)
 
-        self._twitter.update_status(status=message,
+        self.__twitter.update_status(status=message,
                                     media_ids=[response['media_id']])
         
 def main():
