@@ -13,10 +13,10 @@ class ToasterCam:
     __cam = None
     
     def __init__(self):
-        self.__twitter = Twython(os.environ.get['APP_KEY'],
-                                os.environ.get['APP_SECRET'],
-                                os.environ.get['OAUTH_TOKEN'],
-                                os.environ.get['OAUTH_TOKEN_SECRET'])
+        self.__twitter = Twython(os.environ.get('APP_KEY'),
+                                os.environ.get('APP_SECRET'),
+                                os.environ.get('OAUTH_TOKEN'),
+                                os.environ.get('OAUTH_TOKEN_SECRET'))
         self.__cam = cv2.VideoCapture(0)
 
     def tweet_photo(self, message):
